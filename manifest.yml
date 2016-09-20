@@ -6,5 +6,8 @@ applications:
   instances: 1
 qafire_services:
 - name: helloworld-php-db-pg
-  plan: 9.4-t2.micro-5G
-  type: DTO-staging-RDS-postgres
+  plan: shared-pgsql
+  type: dto-shared-pgsql
+qafire:
+  s3_bucket: bg-gov-au-beta-dbdumps
+  s3_key: db_prod_latest.sql
