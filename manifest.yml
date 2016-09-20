@@ -4,7 +4,10 @@ applications:
   buildpack: php_buildpack
   memory: 256M
   instances: 1
-qafire_services:
-- name: helloworld-php-db-pg
-  plan: 9.4-t2.micro-5G
-  type: DTO-staging-RDS-postgres
+qafire:
+  services:
+  - name: helloworld-php-db-pg
+    plan: shared-pgsql
+    type: dto-shared-pgsql
+  s3_bucket: bg-gov-au-beta-dbdumps
+  s3_key: db_prod_latest.sql
