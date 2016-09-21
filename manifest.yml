@@ -5,9 +5,12 @@ applications:
   memory: 256M
   instances: 1
 qafire:
+  prepare: bin/prepare.rb
   services:
   - name: helloworld-php-db-pg
     plan: shared-pgsql
     type: dto-shared-pgsql
-  s3_bucket: bg-gov-au-beta-dbdumps
-  s3_key: db_prod_latest.sql
+    seed:
+      s3:
+        bucket: a-bucket
+        key: db_prod_latest.sql
