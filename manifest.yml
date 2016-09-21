@@ -6,11 +6,4 @@ applications:
   instances: 1
 qafire:
   prepare: bin/prepare.rb
-  services:
-  - name: helloworld-php-db-pg
-    plan: shared-pgsql
-    type: dto-shared-pgsql
-    seed:
-      s3:
-        bucket: a-bucket
-        key: db_prod_latest.sql
+
